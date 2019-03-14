@@ -7,8 +7,8 @@ def filter_in_range(lst,low,high) :
     return [first] + filter_in_range(lst,low,high)
   else :
     return filter_in_range(lst,low,high)
-  return lst
 
+print(filter_in_range([9,56,4],2,4))
 print(filter_in_range([1,2,3,4,5],2,4))
 print(filter_in_range([1,2,3,10,20,30,500,600,100,80,45], 15, 99))
 # x = [1,2,3,4]
