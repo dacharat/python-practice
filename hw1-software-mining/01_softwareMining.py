@@ -122,7 +122,7 @@ print("=====================================================")
 def findMostStar(data): 
   most = data[0]
   for i in data: 
-    if(most['Stars'] < i['Stars']): 
+    if(float(most['Stars']) < float(i['Stars'])): 
       most = i
   return most
 answer7 = findMostStar(data)
