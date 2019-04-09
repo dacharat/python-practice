@@ -53,7 +53,7 @@ def countLicense(data) :
 answer2 = countLicense(data)
 numOfLicense = len(answer2)
 firstFav = answer2[0][0]
-secondFav = answer2[1][0]
+secondFav = answer2[2][0]
 
 print(f'Question2: \n Number of lisence: {numOfLicense}\n Top 2: {firstFav}, {secondFav}')
 
@@ -63,7 +63,7 @@ print("=====================================================")
 def findMostVersion(data): 
   most = data[0]
   for i in data: 
-    if(most['NbOfVersions'] < i['NbOfVersions']): 
+    if(int(most['NbOfVersions']) < int(i['NbOfVersions'])): 
       most = i
   return most
 answer3 = findMostVersion(data)
