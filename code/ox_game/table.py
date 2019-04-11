@@ -40,7 +40,7 @@ class Table :
     # print(f'vertical: {self.verticalWinCheck()}')
     # print(f'horizontal: {self.horizontalWinCheck()}')
     # print(f'diagonal: {self.diagonalWinCheck()}')
-    return self.verticalWinCheck() or self.horizontalWinCheck() or self.diagonalWinCheck()
+    return self.verticalWinCheck() or self.horizontalWinCheck() or self.diagonalWinCheck() or self.otherDiagonalWinCheck()
 
   def verticalWinCheck(self) :
     for i in range(self.size-2) :
@@ -60,5 +60,12 @@ class Table :
     for i in range(self.size - 2) :
       for j in range(self.size - 2) :
         if(self.currentTable[i][j] != '.' and self.currentTable[i][j] == self.currentTable[i+1][j+1] == self.currentTable[i+2][j+2]) :
+          return True
+    return False
+
+  def otherDiagonalWinCheck(self) :
+    for i in range(2, self.size):
+      for j in range(2, self.size):
+        if(self.currentTable[i][j] != '.' and self.currentTable[i][j] == self.currentTable[i-1][j-1] == self.currentTable[i-2][j-2]) :
           return True
     return False
